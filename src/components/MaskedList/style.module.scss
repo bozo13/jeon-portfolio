@@ -1,0 +1,84 @@
+@import "@/app/styles/mixin";
+
+
+
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20vw;
+    margin: 50px 30px 50px 0px;
+
+
+  }
+  
+  .body{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-family: var(--font-text);
+    width: 60vw;
+    line-height: 1.8em;
+    white-space: pre-line;
+    
+  }
+    
+  .lineMask{
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .lineMask li{
+    margin: 0px;
+
+    list-style: none;
+  }
+
+.singletablerow {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em var(--gap);
+    --gap: var(--col-gap);
+    --columns: 3;
+    position: relative;
+    padding: 1em 0;
+}
+.singletablecol{
+    
+    width: calc((99.99% / var(--columns)) - (var(--gap) * ((var(--columns) - 1) / var(--columns))));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.25em;
+    white-space: pre-line;
+    span{
+        font-family: var(--font-base);
+        font-size: 0.75em;
+        color: var(--color-dark);
+        @include breakpoint(small){
+          font-size: 0.5em;   
+        }
+    }    
+    p{
+        font-family: var(--font-text);
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        color: var(--color-dark);
+        @include breakpoint(small){
+          font-size: 0.8em;   
+        }
+  
+    }
+
+}
+.borderBottom {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-dark)
+  
+}

@@ -1,0 +1,73 @@
+
+@import "/src/app/styles/mixin";
+
+@include breakpoint(large){
+
+    .project{
+        opacity: 0.5;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 100px ;
+        border-top: 2px solid var(--color-dark);
+        cursor: pointer;
+        transition: all 0.2s;
+    
+        h2{
+            font-size: 60px;
+            margin: 0px;
+            font-weight: 400;
+            transition: all 0.4s;
+        }
+    
+        p{
+            transition: all 0.4s;
+            font-weight: 300;
+        }
+    
+        &:last-of-type{
+            border-bottom: 2px solid var(--color-dark);
+        }
+    
+        &:hover{
+            opacity: 1;
+    
+            h2{
+                transform: translateX(-10px);
+            }
+    
+            p{
+                transform: translateX(10px);
+            }
+        }
+    }
+}
+
+
+@include breakpoint(medium) {
+  
+
+.project{
+    padding: 20px 50px ;
+  
+
+    h2{
+        font-size: 36px;
+    }
+
+}
+}
+
+@include breakpoint(small) {
+  
+  
+.project{
+    padding: 10px;
+
+    h2{
+        font-size: 16px;
+    }
+}
+  
+}

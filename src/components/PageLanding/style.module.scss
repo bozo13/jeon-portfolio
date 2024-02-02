@@ -1,0 +1,87 @@
+@import "@/app/styles/mixin";
+
+.landing{
+    position: relative;
+    height: calc(35vh + 280px);
+    width: 100%;
+    color: var( --color-lightgray);
+    padding: 15vh 30px 30px 30px;
+    /*
+    background: 
+
+      conic-gradient(from 90deg at 0.5px 0.5px,var(--_g))
+      0 0/calc(var(--s)/10) calc(var(--s)/10);
+    */
+
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include breakpoint(small){
+      height: calc(88vh);
+    }
+
+  .background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: calc(35vh + 280px);
+    background-color: var(--bg-color);
+    background-image: linear-gradient(var(--line-color-1) 1px, transparent 1px), linear-gradient(90deg, var(--line-color-1) 1px, transparent 1px), linear-gradient(var(--line-color-2) 0.5px, transparent 0.5px), linear-gradient(90deg, var(--line-color-2) 0.5px, transparent 0.5px);
+    background-position: -1.5px -1.5px, -1.5px -1.5px, -1px -1px, -1px -1px;
+    background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px;
+    @include breakpoint(small){
+      height: calc(88vh);
+    }
+  }
+  img{
+    object-fit: cover;
+    }
+    a {
+      text-decoration: none;
+      color: var(--color-lightgray);
+  }
+    .title{
+      font-family: var(--font-base);
+      font-size: 55px;
+      font-weight: 300;
+      margin-top: 0;
+      width: 55%;
+    
+    }
+    .description{
+  
+      width:33%;
+      white-space: pre-line;
+      font-size: 16px;
+      font-weight: 300;
+      font-family: var(--font-base);
+
+      @include breakpoint(small){
+        width: 100%;
+      }
+      p{
+        margin: 0px; 
+        width: 100%;
+        font-family: var(--font-text);
+        margin-top: 20px;
+      
+      }
+      svg{
+        transform: scale(2);
+        width: 10px;
+        margin-top: 33px;
+
+      }
+    }
+  }
+
+  .shuffleTitle{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+  }

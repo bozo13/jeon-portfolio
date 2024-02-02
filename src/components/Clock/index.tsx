@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Style from './Style.module.scss'
 
-export default function index(timeNow) {
+export default function index(timeNow:Date ) {
     const [time, setTime] = useState( new Date(timeNow))
 
     useEffect(()=> {

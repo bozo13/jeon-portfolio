@@ -1,14 +1,14 @@
 'use client'
 import Image from 'next/image'
 import styles from './style.module.scss'
-import { useRef, useLayoutEffect ,useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUp } from './animation';
 import { motion } from 'framer-motion';
 
 
-export default function index() {
+export default function landing() {
 
   const firstText = useRef(null);
   const secondText = useRef(null);

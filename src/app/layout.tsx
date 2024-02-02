@@ -9,6 +9,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import Preloader from "../components/Preloader";
 import { AnimatePresence } from 'framer-motion';
 import { LenisScroller } from "../components/LenisScroller";
+import LocomotiveScroll from 'locomotive-scroll';
+
 
 /*
 import  KHInterferenceTRIAL from '/fonts/KHInterferenceTRIAL-Light.woff2'
@@ -45,28 +47,23 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(isHome);
 
 
-  const refScrollContainer = React.createRef();
 
 
+  const ref = useRef<HTMLDivElement | null>(null);
 
-useEffect(() => {
-  let scroll;
-  import("locomotive-scroll").then((locomotiveModule) => {
-      scroll = new locomotiveModule.default({
-          el: document.querySelector("[data-scroll-container]"),
-          smooth: true,
-          smoothMobile: false,
-          resetNativeScroll: true
-      });
+
+  useEffect(() => {
+    let scroll: import("locomotive-scroll");
+    import("locomotive-scroll").then((locomotiveModule) => {
+      scroll = new locomotiveModule.default();
+    });
+
+   // cleanup phase
+    return () => {
+      if (scroll) scroll.destroy();
+    };
   });
 
-  // `useEffect`'s cleanup phase
-  return () => {
-      if (scroll) scroll.destroy();
-      document.body.style.cursor = 'default'
-      window.scrollTo(0,0);
-  }
-});
 
 
 
@@ -82,7 +79,7 @@ useEffect(() => {
       */}
       <title>JOJ Webdesigns</title>
       <body > 
-      <main data-scroll-container >
+      <main data-scroll-container ref={ref} >
       <AnimatePresence 
         mode='wait'
       >     

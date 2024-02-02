@@ -1,14 +1,15 @@
+import * as React from 'react';
 import styles from './style.module.scss';
 import { useInView, motion } from 'framer-motion';
-import { useRef } from 'react';
+
 import { slideUp, opacity } from './animation';
 import Rounded from '../../common/RoundedButton';
-import Quote from '../../components/quote'
+import Quote from '../quote'
 
 export default function index() {
 
     const phrase = "Die Kombination meiner Leidenschaft für Design, Code und Interaktion positioniert mich an einer einzigartigen Stelle in der Welt des Webdesigns.";
-    const description = useRef(null);
+    const description =  React.useRef<HTMLDivElement>(null);
     const isInView = useInView(description)
     return (
         <div ref={description} className={styles.description}>
@@ -51,3 +52,4 @@ Die Kombination meiner Leidenschaft für Design, Code und Interaktion positionie
 helfe Marken, sich im digitalen Zeitalter hervorzuheben. Gemeinsam werden wir den neuen Status Quo festlegen. Kein Unsinn, immer auf dem neuesten Stand.
 
 */
+

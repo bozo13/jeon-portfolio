@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect, useRef } from 'react';
-import styles from './style.module.scss';
+import styles from './Styles/RoundedButton.module.scss';
 import gsap from 'gsap';
-import Magnetic from '../Magnetic';
+import Magnetic from './Magnetic.jsx';
 
-export default function index({children, backgroundColor="#000", ...attributes}) {
+export default function RoundedButton({children, backgroundColor="#000", ...attributes}) {
 
   const circle = useRef(null);
   let timeline = useRef(null);

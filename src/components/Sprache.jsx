@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import styles from './style.module.scss'
+import styles from './Styles/Sprache.module.scss'
 
 
-export function Faehigkeiten({ faehigkeitenlist }) {
+export function Sprache({ sprachelist }) {
 
     const animation = {
       initial: {y: "100%", opacity:0 },
@@ -29,20 +29,18 @@ export function Faehigkeiten({ faehigkeitenlist }) {
   
         <ul ref={ref} className={styles.lineMask}>
         {
-         faehigkeitenlist.map( (Children, index) => {
+         sprachelist .map( (Children, index) => {
             return (
-              <li>
-               <motion.div className= {styles.singletablerow}  key={index}  custom={index} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
+              <li key={index}>
+               <motion.div className= {styles.singletablerow}    custom={index} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
                 <div className= {styles.singletablecol}>
-                  <div>
-                  <h1>{"0"+(index + 1)+ "."}</h1>
+          
                   <p>{Children.name}</p>
-                  </div>
                   <p>{Children.explain}</p>
                 </div>
                 
               </motion.div>
-              <motion.div className={styles.borderBottom}   key={index}  custom={index} initial="initial" variants={lineAnim} animate={inView ? "enter" : "exit"}  />
+              <motion.div className={styles.borderBottom}  custom={index} initial="initial" variants={lineAnim} animate={inView ? "enter" : "exit"}  />
                 </li>
           )
           })

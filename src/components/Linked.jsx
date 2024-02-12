@@ -1,9 +1,9 @@
-import styles from './style.module.scss';
+import styles from './Styles/Linked.module.scss';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { slide, scale } from '../../animation';
+import { slide, scale } from '@/lib/animation';
 
-export default function Index({data, isActive, setSelectedIndicator}) {
+export default function Linked({data, isActive, setSelectedIndicator}) {
   
     const { title, href, index} = data;
   

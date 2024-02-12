@@ -1,4 +1,4 @@
-import styles from './style.module.scss';
+import styles from './Styles/Footer.module.scss';
 
 export default function index() {
   return (

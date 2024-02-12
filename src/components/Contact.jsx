@@ -1,11 +1,11 @@
-import styles from './style.module.scss';
+import styles from './Styles/Contact.module.scss';
 import Image from 'next/image';
-import Rounded from '../../common/RoundedButton';
+import Rounded from '@/common/RoundedButton';
 import  {useRef}  from 'react';
-import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
-import Magnetic from '../../common/Magnetic';
+import { useScroll, motion, useTransform } from 'framer-motion';
+import Magnetic from '@/common/Magnetic';
 
-export default function index() {
+export default function Contact() {
 
     const ContainerRef = useRef(false);
     const { scrollYProgress } = useScroll({
@@ -29,7 +29,7 @@ export default function index() {
                             src={`/images/_DSF8142_black.jpg`}
                             />
                         </div>
-                        <h2>Let's work <br/>together</h2>
+                        <h2>Let &apos; s work <br/>together</h2>
                     </span>
                    
                     <motion.div style={{x}} className={styles.buttonContainer}>

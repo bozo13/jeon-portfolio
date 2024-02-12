@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import styles from './styles.module.scss';
+import styles from './Styles/Curve.module.scss';
 
 export default function Index() {
 

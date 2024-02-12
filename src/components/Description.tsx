@@ -1,16 +1,17 @@
 import * as React from 'react';
-import styles from './style.module.scss';
+import styles from './Styles/Description.module.scss';
 import { useInView, motion } from 'framer-motion';
 
-import { slideUp, opacity } from './animation';
-import Rounded from '../../common/RoundedButton';
-import Quote from '../quote'
+import { slideUp, opacity } from '@/lib/animation';
+import Rounded from '../common/RoundedButton';
+import Quote from './quote'
 
-export default function index() {
+export default function Description() {
 
     const phrase = "Die Kombination meiner Leidenschaft für Design, Code und Interaktion positioniert mich an einer einzigartigen Stelle in der Welt des Webdesigns.";
-    const description =  React.useRef<HTMLDivElement>(null);
+    const description =  React.useRef<HTMLDivElement| null>(null);
     const isInView = useInView(description)
+
     return (
         <div ref={description} className={styles.description}>
 

@@ -1,16 +1,16 @@
 'use client';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import styles from './style.module.scss';
+import styles from './Styles/Header.module.scss';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
-import Nav from './nav';
+import Nav from './Nav';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Rounded from '../../common/RoundedButton';
-import Magnetic from '../../common/Magnetic';
+import Rounded from '@/common/RoundedButton';
+import Magnetic from '@/common/Magnetic';
 
-export default function index() {
+export default function Header() {
     const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();

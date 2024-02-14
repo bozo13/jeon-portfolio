@@ -1,7 +1,7 @@
 import React from 'react'
-import Style from './style.module.scss'
+import Style from './Styles/Footers.module.scss'
 
-export default function index() {
+export default function Footers() {
   return (
     <div className={Style.Footer} >
         <div className= {Style.col}>

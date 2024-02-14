@@ -1,8 +1,8 @@
 
 
-import styles from './style.module.scss';
+import styles from './Styles/Globe.module.scss';
 
-export default function index() {
+export default function Globe() {
   return (
 
    <div className={styles.globeBall}  data-scroll data-scroll-speed={ -0.4}>

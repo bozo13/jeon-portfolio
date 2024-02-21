@@ -22,7 +22,7 @@ export default function Linked({data, isactive, setSelectedIndicator}) {
           animate={isactive ? "open" : "closed"} 
           className={styles.indicator}>
         </motion.div>
-        <Link href={href}>{title}</Link>
+        <Link href={href} prefetch={ false }>{title}</Link>
       </motion.div>
     )
 }

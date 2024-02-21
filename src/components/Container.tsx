@@ -6,10 +6,5 @@ import classNames from "classnames";
  * the horizontal margin everywhere. This results in more consistency in
  * the design in the end.
  */
-export const Container = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => <div className={classNames("bg-white", className)}>{children}</div>;
+export const Container = ({ children,className}: {children: React.ReactNode; className?: string;}) => 
+<div className={classNames("bg-white", className)}>{children}</div>;

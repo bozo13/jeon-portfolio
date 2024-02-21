@@ -53,7 +53,7 @@ export default function Nav() {
                         return  <Linked 
                                       key={index} 
                                       data={{...data, index}} 
-                                      isactive={selectedIndicator == data.href} 
+                                      isactive={ selectedIndicator == data.href } 
                                       setSelectedIndicator={setSelectedIndicator}>
                                 </Linked>
                       })

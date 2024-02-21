@@ -17,7 +17,7 @@ export default function Header() {
     const button = useRef(null);
 
     useEffect( () => {
-      if(isactive) setIsActive(false)
+      if(isactive ) setIsActive(false)
     }, [pathname])
 
     useLayoutEffect( () => {
@@ -37,7 +37,7 @@ export default function Header() {
         <>
         <div ref={header} className={styles.header}>
             <Link href={"/"}
-             isactive={pathname == "/"} >
+             isactive={isactive.toString( pathname == "/")} >
             <div className={styles.logo}>
                 <p className={styles.copyright}>©</p>
                 <div className={styles.name}>
@@ -53,8 +53,10 @@ export default function Header() {
                 <Magnetic>
                     <div className={styles.el}>
                     <Link 
+             
                         href={"/works"}
-                        isactive={pathname == "/works"} 
+                        
+                        isactive= { isactive.toString( pathname == "/works") } 
                         >
                         Work
                         </Link>
@@ -65,7 +67,7 @@ export default function Header() {
                     <div className={styles.el}>
                     <Link 
                         href={"/about"}
-                        isactive={pathname == "/about" } 
+                        isactive={ isactive.toString( pathname == "/about" )} 
                        
                         >
                             about</Link>
@@ -76,7 +78,7 @@ export default function Header() {
                     <div className={styles.el}>
                     <Link 
                         href={"/contact"}
-                        isactive={pathname == "/contact"} >
+                        isactive={isactive.toString( pathname == "/contact") } >
                         Contact</Link>
                         <div className={styles.indicator}></div>
                     </div>

@@ -83,7 +83,6 @@ export default function RootLayout({
       <Suspense>
       <main data-scroll-container ref={ref} >
   
-               {/*
           <AnimatePresence 
             mode='wait'
           >     
@@ -92,8 +91,7 @@ export default function RootLayout({
               )
             }
           </AnimatePresence>
-          */}
- 
+  
         {children} 
         <LenisScroller /> 
       </main>

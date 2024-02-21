@@ -2,7 +2,7 @@
 import './globals.css'
 //import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-//import Header from '../components/Header';
+import Header from '../components/Header';
 import { usePathname , useRouter } from 'next/navigation';
 import React, { useEffect, useState, useRef } from 'react';
 import Preloader from "../components/Preloader";
@@ -82,7 +82,7 @@ export default function RootLayout({
       <body > 
       <Suspense>
       <main data-scroll-container ref={ref} >
-  
+        <Header />
           <AnimatePresence 
             mode='wait'
           >     

@@ -4,7 +4,7 @@ import styles from './Styles/Header.module.scss';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
-//import Nav from './...Nav.text';
+import Nav from '@/components/Nav';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Rounded from '@/common/RoundedButton';
@@ -89,11 +89,11 @@ export default function Header() {
                 <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
             </Rounded>
         </div>
-        {/*
+        
         <AnimatePresence mode="wait">
             {isActive && <Nav />}
         </AnimatePresence>
-    */}
+    
         </>
     )
 }

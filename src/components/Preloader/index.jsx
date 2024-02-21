@@ -3,6 +3,7 @@ import styles from './style.module.scss';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { opacity, slideUp } from './anim';
+import { Suspense } from 'react';
 
 const words = ["Hello", "Bonjour", "Ciao", "Olà", "안녕하세요", "Hallå", "Hallo"]
 
@@ -40,7 +41,7 @@ export default function Index( {finishLoading}) {
     }
 
     return (
-        
+        <Suspense>
 
         <motion.div variants={slideUp} initial="initial"  className={styles.introduction} exit="exit" >
             { isMounted &&  dimension.width > 0 && 
@@ -52,6 +53,7 @@ export default function Index( {finishLoading}) {
             </>
             }
         </motion.div>
+        </Suspense>
 
 
         

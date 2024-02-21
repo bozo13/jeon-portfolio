@@ -1,15 +1,15 @@
-
 'use client'
 import './globals.css'
 //import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-import Header from '../components/Header';
+//import Header from '../components/Header';
 import { usePathname , useRouter } from 'next/navigation';
 import React, { useEffect, useState, useRef } from 'react';
 import Preloader from "../components/Preloader";
 import { AnimatePresence } from 'framer-motion';
 import { LenisScroller } from "../components/LenisScroller";
 import LocomotiveScroll from 'locomotive-scroll';
+import { Suspense } from 'react';
 
 
 /*
@@ -44,6 +44,7 @@ export default function RootLayout({
 
   const pathname = usePathname()
   const isHome = pathname === '/'
+
   const [isLoading, setIsLoading] = useState(isHome);
 
 
@@ -79,18 +80,24 @@ export default function RootLayout({
       */}
       <title>JOJ Webdesigns</title>
       <body > 
+      <Suspense>
       <main data-scroll-container ref={ref} >
-      <AnimatePresence 
-        mode='wait'
-      >     
-      {isLoading && isHome  && (
-        <Preloader  finishLoading={()=>setIsLoading(false)} />)}
-      </AnimatePresence>
-      <Header />
-        {children} 
+  
+               {/*
+          <AnimatePresence 
+            mode='wait'
+          >     
+            {isLoading && isHome  && (
+              <Preloader  finishLoading={()=>setIsLoading(false)} />
+              )
+            }
+          </AnimatePresence>
+          */}
  
+        {children} 
         <LenisScroller /> 
       </main>
+      </Suspense>
       </body>
      
     </html>

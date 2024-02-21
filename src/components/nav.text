@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import styles from './Styles/Nav.module.scss';
 import { motion } from 'framer-motion';
@@ -6,6 +8,7 @@ import { menuSlide } from '@/lib/animation';
 import Link from './Linked';
 import Curve from './Curve';
 import Footer from './Footer';
+import { Suspense } from 'react'
 
 const navItems = [
   {
@@ -32,6 +35,7 @@ export default function Nav() {
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   return (
+    <Suspense>
     <motion.div 
       variants={menuSlide} 
       initial="initial" 
@@ -59,5 +63,6 @@ export default function Nav() {
         </div>
         <Curve />
     </motion.div>
+    </Suspense>
   )
 }

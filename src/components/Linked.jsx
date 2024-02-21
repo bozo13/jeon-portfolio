@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { slide, scale } from '@/lib/animation';
 
-export default function Linked({data, isActive, setSelectedIndicator}) {
+export default function Linked({data, isactive, setSelectedIndicator}) {
   
     const { title, href, index} = data;
   
@@ -19,7 +19,7 @@ export default function Linked({data, isActive, setSelectedIndicator}) {
       >
         <motion.div 
           variants={scale} 
-          animate={isActive ? "open" : "closed"} 
+          animate={isactive ? "open" : "closed"} 
           className={styles.indicator}>
         </motion.div>
         <Link href={href}>{title}</Link>

@@ -12,12 +12,12 @@ import Magnetic from '@/common/Magnetic';
 
 export default function Header() {
     const header = useRef(null);
-    const [isActive, setIsActive] = useState(false);
+    const [isactive, setIsActive] = useState(false);
     const pathname = usePathname();
     const button = useRef(null);
 
     useEffect( () => {
-      if(isActive) setIsActive(false)
+      if(isactive) setIsActive(false)
     }, [pathname])
 
     useLayoutEffect( () => {
@@ -37,7 +37,7 @@ export default function Header() {
         <>
         <div ref={header} className={styles.header}>
             <Link href={"/"}
-             isActive={pathname == "/"} >
+             isactive={pathname == "/"} >
             <div className={styles.logo}>
                 <p className={styles.copyright}>©</p>
                 <div className={styles.name}>
@@ -54,7 +54,7 @@ export default function Header() {
                     <div className={styles.el}>
                     <Link 
                         href={"/works"}
-                        isActive={pathname == "/works"} 
+                        isactive={pathname == "/works"} 
                         >
                         Work
                         </Link>
@@ -65,7 +65,7 @@ export default function Header() {
                     <div className={styles.el}>
                     <Link 
                         href={"/about"}
-                        isActive={pathname == "/about" } 
+                        isactive={pathname == "/about" } 
                        
                         >
                             about</Link>
@@ -76,7 +76,7 @@ export default function Header() {
                     <div className={styles.el}>
                     <Link 
                         href={"/contact"}
-                        isActive={pathname == "/contact"} >
+                        isactive={pathname == "/contact"} >
                         Contact</Link>
                         <div className={styles.indicator}></div>
                     </div>
@@ -85,13 +85,13 @@ export default function Header() {
         </div>
 
         <div ref={button} className={styles.headerButtonContainer}>
-            <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
-                <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
+            <Rounded onClick={() => {setIsActive(!isactive)}} className={`${styles.button}`}>
+                <div className={`${styles.burger} ${isactive ? styles.burgerActive : ""}`}></div>
             </Rounded>
         </div>
         
         <AnimatePresence mode="wait">
-            {isActive && <Nav />}
+            {isactive ? <Nav />: undefined }
         </AnimatePresence>
     
         </>

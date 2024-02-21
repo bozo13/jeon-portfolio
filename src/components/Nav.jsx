@@ -5,10 +5,10 @@ import styles from './Styles/Nav.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { menuSlide } from '@/lib/animation';
-import Link from './Linked';
+import Linked from './Linked';
 import Curve from './Curve';
 import Footer from './Footer';
-import { Suspense } from 'react'
+
 
 const navItems = [
   {
@@ -35,7 +35,7 @@ export default function Nav() {
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   return (
-    <Suspense>
+
     <motion.div 
       variants={menuSlide} 
       initial="initial" 
@@ -50,12 +50,12 @@ export default function Nav() {
                     </div>
                     {
                       navItems.map( (data, index) => {
-                        return <Link 
-                        key={index} 
-                        data={{...data, index}} 
-                        isActive={selectedIndicator == data.href} 
-                        setSelectedIndicator={setSelectedIndicator}>
-                        </Link>
+                        return  <Linked 
+                                      key={index} 
+                                      data={{...data, index}} 
+                                      isactive={selectedIndicator == data.href} 
+                                      setSelectedIndicator={setSelectedIndicator}>
+                                </Linked>
                       })
                     }
             </div>
@@ -63,6 +63,9 @@ export default function Nav() {
         </div>
         <Curve />
     </motion.div>
-    </Suspense>
+
   )
 }
+
+
+//condition ? value : undefined

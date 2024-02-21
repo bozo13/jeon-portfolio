@@ -17,7 +17,7 @@ export const LenisScroller = () => {
     lenis.current = new Lenis();
 
     lenis.current.on("scroll", (e: any) => {
-      console.log(e);
+      //console.log(e);
     });
 
     function raf(time: number) {

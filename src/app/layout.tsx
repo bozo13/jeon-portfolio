@@ -7,7 +7,7 @@ import { usePathname , useRouter } from 'next/navigation';
 import React, { useEffect, useState, useRef } from 'react';
 import Preloader from "../components/Preloader";
 import { AnimatePresence } from 'framer-motion';
-import { LenisScroller } from "../components/LenisScroller";
+import SmoothScroll from "../components/SmoothScroll";
 import LocomotiveScroll from 'locomotive-scroll';
 import { Suspense } from 'react';
 
@@ -68,7 +68,7 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="de">
  
       <style jsx global>{`
         :root {
@@ -98,7 +98,7 @@ export default function RootLayout({
           {children} 
           </Suspense>  
         </main>
-        <LenisScroller /> 
+        <SmoothScroll /> 
       
       
       </body>

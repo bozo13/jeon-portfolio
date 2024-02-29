@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/all';
 import { slideUpLanding  } from '@/lib/animation';
 import { motion } from 'framer-motion';
 //import Image from 'next/image'
+import Globe from './Globe';
 
 export default function Landing() {
 
@@ -52,7 +53,7 @@ export default function Landing() {
   return (
     <motion.div variants={slideUpLanding } initial="initial" animate="enter" className={styles.landing}>
        <div className={styles.backgroundGrid} />
-    
+      <Globe />
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
           <p ref={firstText}>GRAFIKER & FRONT END ENTWICKLER -</p>

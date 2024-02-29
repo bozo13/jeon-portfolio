@@ -10,7 +10,7 @@ import Quote from "@/components/quote";
 import BackToTopButton from "@/components/BacktoTop"
 import { Faehigkeiten } from '@/components/Faehigkeiten';
 import { Sprache } from '@/components/Sprache';
-import Layout from '@/app/layout';
+
 
 
 const phrases = [
@@ -145,11 +145,10 @@ export default function Page() {
                       ]
 
   return (
-    <Layout>
+    <>
+    <PageLanding title={pathname}  description={shortText}  link={pathname} />
 
-      <PageLanding title={pathname}  description={shortText}  link={pathname} />
-
-      <Container className={Style.container} >
+      <Container >
         
           <div className={Style.about} >
           <div className='spacer-xs'/>
@@ -171,9 +170,8 @@ export default function Page() {
             </div>
           </div>
            
-      </Container>
 
-      <Container className={Style.container} >
+
           <div className={Style.about} >
           <div className='spacer-xs'/>
             <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
@@ -191,9 +189,6 @@ export default function Page() {
                 <div className='spacer-xs'/>
             </div>
 
-      </Container>
-
-      <Container className={Style.container} >
           <div className={Style.about} >
           <div className='spacer-xs'/>
             <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
@@ -211,10 +206,7 @@ export default function Page() {
                 <div className='spacer-xs'/>
             </div>
 
-      </Container>
-
-     
-      <Container className={Style.container} >
+  
           <div className={Style.about} >
        
             <div className={Style.karrierTitle } data-scroll data-scroll-speed={0.1}>
@@ -230,8 +222,7 @@ export default function Page() {
             <Faehigkeiten faehigkeitenlist={faehigkeitenlist} />
            
             </div>
-      </Container>
-      <Container className={Style.container} >
+
           <div className={Style.about} >
    
             <div className={Style.karrierTitle } data-scroll data-scroll-speed={0.1}>
@@ -246,10 +237,7 @@ export default function Page() {
             <Sprache sprachelist={sprachelist} />
            
             </div>
-      </Container>
 
-      
-      <Container className={Style.container} >
       <div className='spacer-xs'/>
 
         <div className={Style.BackToTopButton}>
@@ -257,7 +245,6 @@ export default function Page() {
         </div>
       </Container>
 
-
-    </Layout>
+      </>
   )
 }

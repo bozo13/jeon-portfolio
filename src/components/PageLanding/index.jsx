@@ -2,7 +2,7 @@
 import Styles from './style.module.scss'
 import ShuffleText from '@/components/ShuffleText '
 import Globe from '@/components/Globe'
-import { Suspense } from 'react'
+
 
 export default function PageLanding({title, description, link}) {
 
@@ -10,7 +10,6 @@ export default function PageLanding({title, description, link}) {
   const now = new Date();
 
   return (
-    <Suspense>
     <div className={Styles.Landing}  data-scroll-container>
       <div className={Styles.background}/>
       <div data-scroll data-scroll-speed={0.2} className={Styles.title}>
@@ -25,7 +24,7 @@ export default function PageLanding({title, description, link}) {
 
       <Globe />
     </div>
-    </Suspense>
+
 
   )
 }

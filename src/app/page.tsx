@@ -14,15 +14,16 @@ export default function Home() {
   return (
     <>
   <Landing/>
+    <Container>
 
-      <Globe /> 
       <Description />
       <Projects />
       <SlidingImages />
       <div className='spacer-s'/>
 
-
+      
   <Contact />
+  </Container>
   </>
   );
 }

@@ -31,26 +31,26 @@ export function MaskList({ maskedlist }) {
         {
           maskedlist.map( (Children, index) => {
             return (
-              <>
-               <motion.li className= {styles.singletablerow}  key={index}  custom={index} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
+             <div key={Children.name + index}>
+               <motion.li className= {styles.singletablerow}    custom={index} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
+                  <div className= {styles.singletablecol}>
+                    <span className={styles.eyebrow}>Company name</span>
+                    <p className={styles.stacked}>{Children.name}</p>
+                </div>
+
                 <div className= {styles.singletablecol}>
-                  <span className={styles.eyebrow}>Company name</span>
-                  <p className={styles.stacked}>{Children.name}</p>
-               </div>
+                    <span className={styles.eyebrow}>Position</span>
+                    <p className={styles.stacked}>{Children.position}</p>
+                </div>
 
-               <div className= {styles.singletablecol}>
-                  <span className={styles.eyebrow}>Position</span>
-                  <p className={styles.stacked}>{Children.position}</p>
-               </div>
-
-               <div className= {styles.singletablecol}>
-                  <span className={styles.eyebrow}>Period Location</span>
-                  <p className={styles.stacked}>{Children.period}</p>
-               </div>
+                <div className= {styles.singletablecol}>
+                    <span className={styles.eyebrow}>Period Location</span>
+                    <p className={styles.stacked}>{Children.period}</p>
+                </div>
              
               </motion.li>
-                <motion.div className={styles.borderBottom}   key={index}  custom={index} initial="initial" variants={lineAnim} animate={inView ? "enter" : "exit"}  />
-                </>
+                <motion.div className={styles.borderBottom}   key={Children.name + index + index} custom={index} initial="initial" variants={lineAnim} animate={inView ? "enter" : "exit"}  />
+                </div >
           )
           })
         }

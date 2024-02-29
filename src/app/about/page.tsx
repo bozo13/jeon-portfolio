@@ -10,6 +10,7 @@ import Quote from "@/components/quote";
 import BackToTopButton from "@/components/BacktoTop"
 import { Faehigkeiten } from '@/components/Faehigkeiten';
 import { Sprache } from '@/components/Sprache';
+import Layout from '@/app/layout';
 
 
 const phrases = [
@@ -144,7 +145,7 @@ export default function Page() {
                       ]
 
   return (
-    <>
+    <Layout>
 
       <PageLanding title={pathname}  description={shortText}  link={pathname} />
 
@@ -257,6 +258,6 @@ export default function Page() {
       </Container>
 
 
-    </>
+    </Layout>
   )
 }

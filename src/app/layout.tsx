@@ -76,27 +76,30 @@ export default function RootLayout({
           --font-text: ${myFont2.style.fontFamily};
         }
       `}</style>
+
       <title>JOJ Webdesigns</title>
-      <body > 
-      <Suspense>
-      <main data-scroll-container ref={ref} >
+        <body > 
 
-      <Header />
+        <Header />
+        <main data-scroll-container ref={ref} >
 
-          <AnimatePresence 
-            mode='wait'
-          >     
-            {isLoading && isHome  && (
-              <Preloader  finishLoading={()=>setIsLoading(false)} />
-              )
-            }
-          </AnimatePresence>
-  
-        {children} 
 
-      </main>
-      <LenisScroller /> 
-      </Suspense>
+        <Suspense>
+            <AnimatePresence 
+              mode='wait'
+            >         
+              {isLoading && isHome  && (
+
+                <Preloader  finishLoading={()=>setIsLoading(false)} />
+                )
+              }
+            </AnimatePresence>
+    
+          {children} 
+          </Suspense>  
+        </main>
+        <LenisScroller /> 
+      
       
       </body>
     </html>

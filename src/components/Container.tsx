@@ -1,4 +1,6 @@
 // The package classNames is an easy way to merge class names.
+"use client"
+
 import classNames from "classnames";
 
 /**
@@ -7,4 +9,4 @@ import classNames from "classnames";
  * the design in the end.
  */
 export const Container = ({ children,className}: {children: React.ReactNode; className?: string;}) => 
-<div className={classNames("bg-white", className)}>{children}</div>;
+<div className={classNames("bg-white relative", className)}>{children}</div>;

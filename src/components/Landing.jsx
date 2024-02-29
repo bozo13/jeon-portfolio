@@ -1,9 +1,9 @@
 'use client'
-import styles from './Styles/Clock.module.scss'
+import styles from './Styles/Landing.module.scss'
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { slideUp } from '@/lib/animation';
+import { slideUpLanding  } from '@/lib/animation';
 import { motion } from 'framer-motion';
 //import Image from 'next/image'
 
@@ -50,7 +50,7 @@ export default function Landing() {
 
 
   return (
-    <motion.div variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
+    <motion.div variants={slideUpLanding } initial="initial" animate="enter" className={styles.landing}>
        <div className={styles.backgroundGrid} />
     
       <div className={styles.sliderContainer}>

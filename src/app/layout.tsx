@@ -11,25 +11,24 @@ import { LenisScroller } from "../components/LenisScroller";
 import LocomotiveScroll from 'locomotive-scroll';
 import { Suspense } from 'react';
 
-
 /*
-import  KHInterferenceTRIAL from '/fonts/KHInterferenceTRIAL-Light.woff2'
-import KHTekaTRIALLight from '/fonts/KHInterferenceTRIAL-Light.woff2'
-
-const inter = Inter({ subsets: ['latin'] })
+import  KHInterferenceTRIAL from '../../public/fonts/KHInterferenceTRIAL-Light.woff2'
+import KHTekaTRIALLight from '../../public/fonts//KHInterferenceTRIAL-Light.woff2'
+*/
+//const inter = Inter({ subsets: ['latin'] })
 
 const myFont = localFont({ 
                     
                           src:[ {
-                            path: './fonts/KHInterferenceTRIAL-Light.woff2',
+                            path: '../../public/fonts/KHInterferenceTRIAL-Light.woff2',
                             weight: '400',
                           
                           },
                              ]      ,                       
                         })
 
-const myFont2 = localFont({ src: './fonts/KHTekaTRIAL-Light.woff2' });
-  */
+const myFont2 = localFont({ src: '../../public/fonts//KHTekaTRIAL-Light.woff2' });
+
  
 
 
@@ -70,19 +69,20 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      {/*
+ 
       <style jsx global>{`
         :root {
-          --font-base: ${KHInterferenceTRIAL.style.fontFamily};
-          --font-text: ${KHTekaTRIALLight.style.fontFamily};
+          --font-base: ${myFont.style.fontFamily};
+          --font-text: ${myFont2.style.fontFamily};
         }
       `}</style>
-      */}
       <title>JOJ Webdesigns</title>
       <body > 
       <Suspense>
       <main data-scroll-container ref={ref} >
-        <Header />
+
+      <Header />
+
           <AnimatePresence 
             mode='wait'
           >     
@@ -93,11 +93,12 @@ export default function RootLayout({
           </AnimatePresence>
   
         {children} 
-        <LenisScroller /> 
+
       </main>
+      <LenisScroller /> 
       </Suspense>
+      
       </body>
-     
     </html>
    
   )

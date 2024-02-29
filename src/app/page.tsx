@@ -7,23 +7,22 @@ import Description from "@/components/Description"
 import Projects from "@/components/Projects"
 import SlidingImages from "@/components/SlidingImages"
 import Contact from "@/components/Contact"
-//import Header from "@/components/Header"
+import Header from "@/components/Header"
 
 
 export default function Home() {
   return (
-<>
- 
-      <Container>
-       
-   
-        <Description/>
-        <Projects />
-        <SlidingImages />
-       
+    <>
+  <Landing/>
 
-        <Contact />
-    </Container>
-    </>
+      <Globe /> 
+      <Description />
+      <Projects />
+      <SlidingImages />
+      <div className='spacer-s'/>
+
+
+  <Contact />
+  </>
   );
 }

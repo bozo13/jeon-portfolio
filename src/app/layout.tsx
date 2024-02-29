@@ -33,43 +33,32 @@ const myFont2 = localFont({ src: '../../public/fonts//KHTekaTRIAL-Light.woff2' }
 
 
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
-  const pathname = usePathname()
-  const isHome = pathname === '/'
-
-  const [isLoading, setIsLoading] = useState(isHome);
-
-
-
+  const [isLoading, setIsLoading] = useState<boolean>(isHome);
 
   const ref = useRef<HTMLDivElement | null>(null);
 
-
   useEffect(() => {
-    let scroll: import("locomotive-scroll");
-    import("locomotive-scroll").then((locomotiveModule) => {
+    let scroll: import('locomotive-scroll');
+    import('locomotive-scroll').then((locomotiveModule) => {
       scroll = new locomotiveModule.default();
     });
 
-   // cleanup phase
+    // cleanup phase
     return () => {
       if (scroll) scroll.destroy();
     };
   });
 
-
-
-
   return (
     <html lang="de">
- 
       <style jsx global>{`
         :root {
           --font-base: ${myFont.style.fontFamily};
@@ -78,32 +67,18 @@ export default function RootLayout({
       `}</style>
 
       <title>JOJ Webdesigns</title>
-        <body > 
-
+      <body>
         <Header />
-        <main data-scroll-container ref={ref} >
-
-
-        <Suspense>
-            <AnimatePresence 
-              mode='wait'
-            >         
-              {isLoading && isHome  && (
-
-                <Preloader  finishLoading={()=>setIsLoading(false)} />
-                )
-              }
+        <main data-scroll-container ref={ref}>
+          <Suspense fallback={null}>
+            <AnimatePresence mode="wait">
+              {isLoading && isHome && <Preloader finishLoading={() => setIsLoading(false)} />}
             </AnimatePresence>
-    
-          {children} 
-          </Suspense>  
+            {children}
+          </Suspense>
         </main>
-        <SmoothScroll /> 
-      
-      
+        <SmoothScroll />
       </body>
     </html>
-   
-  )
+  );
 }
-

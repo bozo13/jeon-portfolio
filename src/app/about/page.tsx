@@ -12,7 +12,6 @@ import { Faehigkeiten } from '@/components/Faehigkeiten';
 import { Sprache } from '@/components/Sprache';
 
 
-
 const phrases = [
     "Mein Name ist Jong-ok Jeon und Ich bin eine talentierte und erfahrene Grafikdesigner und Frontend-Entwickler. mit umfassenden Kenntnissen in Adobe Design-Programmen sowie JavaScript, HTML, SASS, ReactJS mit GatsbyJS und NextJS. ",
     "habe meine Fähigkeiten autodidaktisch erworben und durch jahrelange Arbeit  in der Industrie sowie im Außendienst ständig verbessert. Die Kombination meiner Leidenschaft für Design, Code und Interaktion positioniert mich an einer einzigartigen Stelle in der Welt des Webdesigns. helfe Marken, sich im digitalen Zeitalter hervorzuheben. Gemeinsam werden wir den neuen Status Quo festlegen. Kein Unsinn, immer auf dem neuesten Stand.",
@@ -133,6 +132,7 @@ const sprachelist = [
   },
  
 ]
+
 
 export default function Page() {
     const pathname = usePathname()

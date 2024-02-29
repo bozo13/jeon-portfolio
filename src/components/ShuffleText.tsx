@@ -2,16 +2,16 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 
 interface Props {
-  shuffletext: string;
+  shuffletextEL: string;
   link: string;
   randomText : string[];
   
 }
 
-const Index: React.FC<Props> = ({ shuffletext, link }) => {
+const ShuffleText: React.FC<Props> = ({ shuffletextEL, link }) => {
   const velocity: number = 50;
 
-  const shuffleText = (element: HTMLElement, originalText: string): void => {
+  const shuffleTextFu = (element: HTMLElement, originalText: string): void => {
     const elementTextArray: string[] = Array.from(originalText);
     let randomText: string[] = []; // Initialize randomText here
 
@@ -43,14 +43,14 @@ const Index: React.FC<Props> = ({ shuffletext, link }) => {
   useEffect(() => {
     const handleMouseEnter = (event: MouseEvent): void => {
       const element = event.target as HTMLElement;
-      shuffleText(element, element.dataset.text!);
+      shuffleTextFu(element, element.dataset.text!);
     };
 
     const shuffleElements = document.querySelectorAll<HTMLElement>('.shuffle');
 
     shuffleElements.forEach((element) => {
       element.dataset.text = element.textContent!;
-      shuffleText(element, element.dataset.text!);
+      shuffleTextFu(element, element.dataset.text!);
       element.addEventListener('mouseenter', handleMouseEnter);
     });
 
@@ -71,12 +71,12 @@ const Index: React.FC<Props> = ({ shuffletext, link }) => {
 
   return (
     <Link href={link} replace>
-      <span className='shuffle'>{shuffletext}</span>
+      <span className='shuffle'>{shuffletextEL}</span>
     </Link>
   );
 };
 
-export default Index;
+export default ShuffleText;
 /*
 randomText = randomText.join('');
 element.textContent = randomText;

@@ -24,9 +24,15 @@ export default function Header() {
         gsap.registerPlugin(ScrollTrigger)
         gsap.to(button.current, {
             scrollTrigger: {
+                /*
                 trigger: document.documentElement,
                 start: 0,
                 end: window.innerHeight,
+                */
+                trigger: this,
+                start: "0% 10%",
+                end: "+=500px",
+                markers:true,
                 onLeave: () => {gsap.to(button.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
                 onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out"},setIsActive(false))}
             }

@@ -5,7 +5,7 @@ import localFont from 'next/font/local'
 import Header from '../components/Header';
 import { usePathname , useRouter } from 'next/navigation';
 import React, { useEffect, useState, useRef } from 'react';
-import Preloader from "../components/Preloader";
+import Preloader from "../components/PreLoader";
 import { AnimatePresence } from 'framer-motion';
 import SmoothScroll from "../components/SmoothScroll";
 import LocomotiveScroll from 'locomotive-scroll';
@@ -29,6 +29,7 @@ const myFont = localFont({
 
 const myFont2 = localFont({ src: '../../public/fonts//KHTekaTRIAL-Light.woff2' });
 
+
  
 
 
@@ -40,7 +41,7 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const isHome = pathname === '/';
-
+ 
   const [isLoading, setIsLoading] = useState<boolean>(isHome);
 
   const ref = useRef<HTMLDivElement | null>(null);
@@ -57,6 +58,8 @@ export default function RootLayout({
     };
   });
 
+
+
   return (
     <html lang="de">
       <style jsx global>{`
@@ -68,11 +71,14 @@ export default function RootLayout({
 
       <title>JOJ Webdesigns</title>
       <body>
+   
         <Header />
-        <main data-scroll-container ref={ref}>
+        <main data-scroll data-scroll-container ref={ref}>
           <Suspense fallback={null}>
-            <AnimatePresence mode="wait">
-              {isLoading && isHome && <Preloader finishLoading={() => setIsLoading(false)} />}
+          <AnimatePresence mode="wait">
+              {isLoading && isHome  && (
+                <Preloader  finishLoading={()=>setIsLoading(false)} />)
+              }
             </AnimatePresence>
             {children}
           </Suspense>

@@ -9,7 +9,8 @@ import { MaskList } from '@/components/MaskedList';
 import Quote from "@/components/quote";
 import BackToTopButton from "@/components/BacktoTop"
 import { Faehigkeiten } from '@/components/Faehigkeiten';
-import { Sprache } from '@/components/Sprache';
+import Sprache from '@/components/Sprache';
+import Footers from '@/components/Footers';
 
 
 const phrases = [
@@ -148,10 +149,10 @@ export default function Page() {
     <>
     <PageLanding title={pathname}  description={shortText}  link={pathname} />
 
-      <Container >
+      <Container className={Style.container}>
         
           <div className={Style.about} >
-          <div className='spacer-xs'/>
+          <div className='mt-24'/>
             <div className={Style.karrierTitle }  data-scroll data-scroll-speed={0.1}>
               <div className='flex'>
               <h1 >Greeting  </h1>
@@ -161,7 +162,7 @@ export default function Page() {
           </div>
 
           <div className={Style.greeting}>
-          <div className='spacer-xs'/>
+          <div className='mt-24'/>
             <div className={Style.maskedtextcontainer}>
               <MaskText  maskedtext ={phrases}  />
             </div>
@@ -173,7 +174,7 @@ export default function Page() {
 
 
           <div className={Style.about} >
-          <div className='spacer-xs'/>
+          <div className='mt-24'/>
             <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
             <div className='flex'>
                 <h1 >KARRIERE</h1>
@@ -184,13 +185,13 @@ export default function Page() {
            
             <div className={Style.greeting}>
                 
-                <div className='spacer-xs'/>
+                <div className='mt-24'/>
                   <MaskList maskedlist={carrierData} />
-                <div className='spacer-xs'/>
+                <div className='mt-24'/>
             </div>
 
           <div className={Style.about} >
-          <div className='spacer-xs'/>
+          <div className='mt-24'/>
             <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
             <div className='flex'>
                 <h1 >Abschlüsse  </h1>
@@ -201,9 +202,9 @@ export default function Page() {
            
             <div className={Style.greeting}>
                 
-                <div className='spacer-xs'/>
+                <div className='mt-24'/>
                   <MaskList maskedlist={abschlusseData} />
-                <div className='spacer-xs'/>
+                <div className='mt-24'/>
             </div>
 
   
@@ -238,12 +239,13 @@ export default function Page() {
            
             </div>
 
-      <div className='spacer-xs'/>
+      <div className='mt-24'/>
 
         <div className={Style.BackToTopButton}>
         <BackToTopButton />
         </div>
       </Container>
+      <Footers />
 
       </>
   )

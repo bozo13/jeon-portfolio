@@ -8,6 +8,7 @@ import Projects from "@/components/Projects"
 import SlidingImages from "@/components/SlidingImages";
 import Contact from "@/components/Contact"
 import RootLayout from "./layout";
+import Clock from "@/components/Clock";
 
 
 export default function Home() {
@@ -19,11 +20,12 @@ export default function Home() {
 
     <Landing/>
       <Container>
-
+  
         <Description />
         <Projects />
         <SlidingImages />
         <div className='spacer-s'/>
+        <Clock />
 
         
     <Contact />

@@ -1,21 +1,26 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import styles from './Styles/Sprache.module.scss';
+import styles from './Styles/Faehigkeiten.module.scss';
 
-interface SpracheProps {
-  sprachelist: { name: string; explain: string }[];
+interface Skill {
+  name: string;
+  explain: string;
 }
 
-const Sprache: React.FC<SpracheProps> = ({ sprachelist }) => {
-  const animation = {
+interface FaehigkeitenProps {
+  faehigkeitenlist: Skill[];
+}
+
+export function Faehigkeiten({ faehigkeitenlist }: FaehigkeitenProps): JSX.Element {
+  const animation: Variants = {
     initial: { y: "100%", opacity: 0 },
     enter: (i: number) => ({ y: "0", opacity: "100%", transition: { duration: 0.75, ease: [0.33, 1, 0.68, 1], delay: 0.2 * i } }),
     exit: (i: number) => ({ y: "100%", opacity: 0, transition: { duration: 0.75, ease: [0.33, 1, 0.68, 1], delay: 0.2 * i } })
   };
 
-  const lineAnim = {
+  const lineAnim: Variants = {
     initial: { width: "0%" },
-    enter: (i: number) => ({ width: "100%", transition: { duration: 0.75, ease: [0.33, 1, 0.68, 1], delay: 0.4+(0.2 * i) } }),
+    enter: (i: number) => ({ width: "100%", transition: { duration: 0.75, ease: [0.33, 1, 0.68, 1], delay: 0.6+(0.2 * i)  } }),
     exit: (i: number) => ({ width: "0%", transition: { duration: 0.75, ease: [0.33, 1, 0.68, 1], delay: 0.2 * i } }),
   };
 
@@ -26,11 +31,14 @@ const Sprache: React.FC<SpracheProps> = ({ sprachelist }) => {
 
   return (
     <ul ref={ref} className={styles.lineMask}>
-      {sprachelist.map((Children, index) => (
+      {faehigkeitenlist.map((Children, index) => (
         <li key={index}>
           <motion.div className={styles.singletablerow} custom={index} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
             <div className={styles.singletablecol}>
-              <p>{Children.name}</p>
+              <div>
+                <h1>{"0" + (index + 1) + "."}</h1>
+                <p>{Children.name}</p>
+              </div>
               <p>{Children.explain}</p>
             </div>
           </motion.div>
@@ -39,6 +47,4 @@ const Sprache: React.FC<SpracheProps> = ({ sprachelist }) => {
       ))}
     </ul>
   );
-};
-
-export default Sprache;
+}

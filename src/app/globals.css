@@ -180,3 +180,8 @@ html.lenis, html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+
+h1,h2,h3,h4,h5,h6, p{
+  font-family: var(--font-base);
+} 

@@ -7,16 +7,16 @@ import Magnetic from '@/common/Magnetic';
 
 export default function Contact() {
 
-    const ContainerRef = useRef(false);
+    const ContactRef = useRef(false);
     const { scrollYProgress } = useScroll({
-        target: ContainerRef,
+        target: ContactRef,
         offset: ["start end", "end end"]
     })
     const x = useTransform(scrollYProgress, [0, 1], [0, 100])
-    const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
+    const y = useTransform(scrollYProgress, [0, 1], [0, 0])
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
     return (
-        <motion.div style={{y}} ref={ContainerRef} className={styles.contact}>
+        <motion.div style={{y}} ref={ContactRef} className={styles.contact}>
             <div className={styles.body}>
                 <div className={styles.title}>
               

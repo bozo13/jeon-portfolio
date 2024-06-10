@@ -5,6 +5,7 @@ import { useInView, motion } from 'framer-motion';
 import { slideUp, opacity } from '@/lib/animation';
 import Rounded from '../common/RoundedButton';
 import Quote from './quote'
+import Link from 'next/link'; 
 
 export default function Description() {
 
@@ -35,7 +36,9 @@ export default function Description() {
                 <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>helfe Marken, sich im digitalen Zeitalter hervorzuheben. Gemeinsam werden wir den neuen Status Quo festlegen. Kein Unsinn, immer auf dem neuesten Stand.</motion.p>
                 <div data-scroll data-scroll-speed={0.1}>
                     <Rounded className={styles.button}>
-                        <p>About me</p>
+                        <Link href="/about">
+                            <p>About me</p>
+                        </Link>
                     </Rounded>
                 </div>
             </div>

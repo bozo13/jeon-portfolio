@@ -1,51 +1,15 @@
 @import "../../app/styles/mixin";
 /* ------------------------- About - Stripe + Globe -------------------------------------------------- */
 
-.line-globe {
-    overflow: visible;
 
- }
  
- @keyframes digitalball {
-    0%   {background: transparent;}
-    50%   {background: #ff4444;}
-    100% {background: transparent;}
- }
+
  
  .globeBall {
     width: clamp(9em, 12vw, 11em);
     height: clamp(9em, 12vw, 11em);
-    background: var(--color-light);
     border-radius: 50%;
-
-    left: 0px;
-    margin-top: 109px;
     transform: translate(0%, 0%);
-
-    overflow: hidden;
-    background: transparent;
-    mix-blend-mode: difference;
-
-    @include breakpoint(small){
-        left: 5px;
-        top: 10%;
-    }
- }
- 
- .globeBall .overlay {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    animation: digitalball 6s ease-in-out infinite;
- }
- 
- .line-globe .globeBall:hover .overlay {
-    opacity: 1;
- }
- 
- @keyframes globeBounce {
-    0%   {transform: translate(-50%, -40%);}
-    50%  {transform: translate(-50%, -60%);}
-    100% {transform: translate(-50%, -40%);}
  }
  
  .globe {
@@ -56,8 +20,8 @@
     height: 7em;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    overflow: hidden;
-    will-change: transform;
+   
+ 
  }
  
  @keyframes globe {
@@ -77,8 +41,8 @@
     transform: translate(-50%, -50%) rotate(30deg);
     animation: globe 5.4s cubic-bezier(0.35, 0, 0.65, 1) infinite;
     overflow: hidden;
-    box-shadow: inset 0px 0px 0px .125em var(--color-light);
-    mix-blend-mode: difference;
+    box-shadow: inset 0px 0px 0px .125em ;
+
  }
  
  .globe .circle {
@@ -89,17 +53,18 @@
     height: 100%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    box-shadow: inset .1em 0px 0px .08em var(--color-light);
+    box-shadow: inset .1em 0px 0px .08em ;
     animation: circle1 2.7s linear infinite;
     font-size: .75em;
+
  }
  
  @keyframes circle1 {
-    0%   {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em var(--color-light); width: 100%; }
-    49%  {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em var(--color-light); background: transparent;}
-    50%  {border-radius: 0%; width: .175em; background: var(--color-light);}
-    51%  {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em var(--color-light); background: transparent;}
-    100% {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em var(--color-light); width: 100%;}
+    0%   {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em ; width: 100%; }
+    49%  {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em ; }
+    50%  {border-radius: 0%;  box-shadow: inset .1em 0px 0px .08em ;  width: .175em;}
+    51%  {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em ; }
+    100% {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em ; width: 100%;}
  }
  
  .globe :nth-child(1) {
@@ -119,8 +84,9 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
     height: 55%;
-    box-shadow: inset 0px 0px 0px .15em var(--color-light);
+    box-shadow: inset 0px 0px 0px .15em ;
     font-size: .75em;
+   
  }
  
  .globe .circleHorMiddle {
@@ -131,14 +97,7 @@
     transform: translate(-50%, -50%);
     border-radius: 0%;
     height: .15em;
-    background: var(--color-light);
+    box-shadow: inset -.1em 0px 0px .08em ; 
     font-size: .75em;
- }
- 
- @media screen and (max-width: 1000px) {
- 
-    .globeBall {
-       transform: translate(-20%, -50%);
-    }
- 
+
  }

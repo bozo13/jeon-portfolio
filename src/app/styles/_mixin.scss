@@ -4,7 +4,7 @@
       @media (max-width: 720px) { @content; }
     }
     @else if $point == medium {
-      @media (max-width: 1024px) { @content; }
+      @media (max-width: 1200px) { @content; }
     }
     @else if $point == large {
       @media (min-width: 1200px) { @content; }

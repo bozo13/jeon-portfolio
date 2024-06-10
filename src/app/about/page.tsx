@@ -10,8 +10,8 @@ import Quote from "@/components/quote";
 import BackToTopButton from "@/components/BacktoTop"
 import { Faehigkeiten } from '@/components/Faehigkeiten';
 import Sprache from '@/components/Sprache';
-import Footers from '@/components/Footers';
-
+import Contact from '@/components/Contact';
+import MonoGrid from '@/components/monoGrid';
 
 const phrases = [
     "Mein Name ist Jong-ok Jeon und Ich bin eine talentierte und erfahrene Grafikdesigner und Frontend-Entwickler. mit umfassenden Kenntnissen in Adobe Design-Programmen sowie JavaScript, HTML, SASS, ReactJS mit GatsbyJS und NextJS. ",
@@ -149,104 +149,83 @@ export default function Page() {
     <>
     <PageLanding title={pathname}  description={shortText}  link={pathname} />
 
-      <Container className={Style.container}>
-        
-          <div className={Style.about} >
-          <div className='mt-24'/>
-            <div className={Style.karrierTitle }  data-scroll data-scroll-speed={0.1}>
-              <div className='flex'>
-              <h1 >Greeting  </h1>
-              <Quote />
-              </div>
-            </div>
-          </div>
+    <div className='p-7 md:p-14 bg-white'>
 
-          <div className={Style.greeting}>
-          <div className='mt-24'/>
-            <div className={Style.maskedtextcontainer}>
-              <MaskText  maskedtext ={phrases}  />
-            </div>
-            <div className={ Style.maskedtextcontainer }>
-              <MaskText  maskedtext ={phrases2} />
-            </div>
-          </div>
-           
-
-
-          <div className={Style.about} >
-          <div className='mt-24'/>
-            <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
-            <div className='flex'>
-                <h1 >KARRIERE</h1>
-                <Quote />
-              </div>
-              </div>
-          </div>
-           
-            <div className={Style.greeting}>
-                
-                <div className='mt-24'/>
-                  <MaskList maskedlist={carrierData} />
-                <div className='mt-24'/>
-            </div>
-
-          <div className={Style.about} >
-          <div className='mt-24'/>
-            <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
-            <div className='flex'>
-                <h1 >Abschlüsse  </h1>
-                <Quote />
+          <div className='md:flex mt-14 w-full '>
+              <div className='flex mb-14 justify-start md:justify-end w-full md:w-2/5  '>
+                <h1 className='text-xl'>Greetings</h1>
+                <div className='w-6  mr-32 ml-3 md:ml-5' >
+                  <Quote />
                 </div>
               </div>
-          </div>
+              <div className=' w-full md:w-3/5'>
+                <MaskText  maskedtext ={phrases}  />
+                <MaskText  maskedtext ={phrases2} />
+              </div>
+            </div>
+    
+
+            <div className='md:flex mt-14 w-full '>
+              <div className='flex mb-14 justify-start md:justify-end w-full md:w-2/5  '>
+                <h1 className='text-xl'>KARRIERE</h1>
+                <div className='w-6  mr-32 ml-3 md:ml-5' >
+                  <Quote />                  
+                </div>
+                <div className='scale-150'>
+         
+              <div className='scale-150'>
+              <MonoGrid />
+              </div>  
+         </div>       
+              </div>
            
-            <div className={Style.greeting}>
-                
-                <div className='mt-24'/>
-                  <MaskList maskedlist={abschlusseData} />
-                <div className='mt-24'/>
+              <div className=' w-full md:w-3/5'>
+                <MaskList maskedlist={carrierData} />
+              </div>
             </div>
 
-  
-          <div className={Style.about} >
-       
-            <div className={Style.karrierTitle } data-scroll data-scroll-speed={0.1}>
-            <div className='flex'>
-              
-            <h1 > FÄHIGKEITEN</h1> 
-                <Quote />
-              </div>
-              </div>
-          </div>
-            <div className={Style.faehigkeiten}>
-            <div className='spacer-s'/>
-            <Faehigkeiten faehigkeitenlist={faehigkeitenlist} />
-           
-            </div>
-
-          <div className={Style.about} >
-   
-            <div className={Style.karrierTitle } data-scroll data-scroll-speed={0.1}>
-            <div className='flex'>
-            <h1 > SPRACHE</h1> 
-                <Quote />
+            <div className='md:flex mt-14 w-full '>
+              <div className='flex mb-14 justify-start md:justify-end w-full md:w-2/5  '>
+                <h1 className='text-xl'>Abschlüsse</h1>
+                <div className='w-6  mr-32 ml-3 md:ml-5' >
+                  <Quote />
                 </div>
               </div>
-          </div>
-            <div className={Style.faehigkeiten}>
-                   <div className='spacer-s'/>
-            <Sprache sprachelist={sprachelist} />
-           
+              <div className=' w-full md:w-3/5'>
+                <MaskList maskedlist={abschlusseData} />
+              </div>
             </div>
 
-      <div className='mt-24'/>
+            <div className='md:flex mt-14 w-full '>
+              <div className='flex mb-14 justify-start md:justify-end w-full md:w-2/5  '>
+                <h1 className='text-xl'>FÄHIGKEITEN</h1> 
+                <div className='w-6  mr-32 ml-3 md:ml-5' >
+                  <Quote />
+                </div>
+              </div>
+              <div className=' w-full md:w-3/5'>
+                <Faehigkeiten faehigkeitenlist={faehigkeitenlist} />
+              </div>
+              </div>  
+            
+              <div className='md:flex mt-14 w-full '>
+                <div className='flex mb-14 justify-start md:justify-end w-full md:w-2/5  '>
+                  <h1>SPRACHE</h1> 
+                  <div className='w-6  mr-32 ml-3 md:ml-5' >
+                    <Quote />
+                  </div>
+                </div>
+                <div className=' w-full md:w-3/5'>
+                  <Sprache sprachelist={sprachelist} />
+                </div>
+              </div>
 
-        <div className={Style.BackToTopButton}>
-        <BackToTopButton />
+
+        <div className='bg-black text-white max-w-32 m-32 text-center p-1  '>
+          <BackToTopButton />
         </div>
-      </Container>
-      <Footers />
-
+      </div>
+      <Contact />
       </>
   )
 }

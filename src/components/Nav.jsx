@@ -46,7 +46,7 @@ export default function Nav() {
        <div className={styles.body}>
             <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={styles.nav}>
                     <div className={styles.header}>
-                        <p>Navigation</p>
+                        <p className='text-lg'>Navigation</p>
                     </div>
                     {
                       navItems.map( (data, index) => {

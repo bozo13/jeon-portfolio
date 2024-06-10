@@ -51,6 +51,7 @@ export default function Landing(): JSX.Element {
         <div className={styles.backgroundGrid} />
         <div >
           <Parallax speed={-4}>
+        
             <Globe />
           </Parallax>
         </div>

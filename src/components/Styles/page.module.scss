@@ -1,0 +1,20 @@
+@import '@/app/styles/_mixin';
+
+@include breakpoint(small){
+    html{
+        font-size: 12px;
+        text-size-adjust: auto;
+    }
+}
+@include breakpoint(medium){
+    html{
+        font-size: 16px;
+        text-size-adjust: auto;
+    }
+}
+@include breakpoint(large){
+    html{
+        font-size: 20px;
+        text-size-adjust: auto;
+    }
+}

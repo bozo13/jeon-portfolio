@@ -32,7 +32,7 @@ export default function Linked({ data, isactive, setSelectedIndicator }: LinkedP
         animate={isactive ? "open" : "closed"}
         className={styles.indicator}
       ></motion.div>
-      <Link href={href} prefetch={false}>{title}</Link>
+      <Link href={href} prefetch={false}><p className='text-3xl'>{title}</p></Link>
     </motion.div>
   );
 }

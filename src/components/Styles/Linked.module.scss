@@ -1,14 +1,27 @@
+@import "@/app/styles/mixin";
 .link{
     position: relative;
     display: flex;
     align-items: center;
     
     .indicator{
-        width: 10px;
-        height: 10px;
+        width: 5px;
+        height: 5px;
         background-color: white;
         border-radius: 50%;
         position: absolute;
         left: -30px;
+    }
+}
+
+
+@include breakpoint(large){
+    .link{
+  
+        
+        .indicator{
+            width: 10px;
+            height: 10px;
+        }
     }
 }

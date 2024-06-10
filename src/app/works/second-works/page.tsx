@@ -3,13 +3,14 @@ import PageLanding from '@/components/PageLanding';
 import { usePathname } from "next/navigation";
 import Sprache from '@/components/Sprache';
 import { Container } from '@/components/Container';
-import Footers from '@/components/Footers';
+import Contact from '@/components/Contact';
+import { Parallax } from '@/components/Parallax';
 
 
 
 export default function Page(){
     const pathname = usePathname()
-    const shortText =  [ "es ist zweite Seite von Works ",
+    const shortText =  [ "Es ist zweite Seite von Works ",
                          "",
                          "\n",
                          "."
@@ -31,25 +32,19 @@ export default function Page(){
   return (
         <>
         <PageLanding title={pathname}  description={shortText}  link={pathname} />
-        <Container className='px-24'>
-        <div>
-         <h1 className='text-6xl'>Zweite Seite</h1>
-        </div> 
-        <div className='py-32' />
+        <Container className='px-12 py-12 md:px-24 md:py-24'>
+        <Parallax speed={-1}>
+         <h1 className='text-2xl md:text-6xl'>Zweite Seite</h1>
+        </Parallax> 
+        <div className='py-12 md:py-24' />
 
             <Sprache sprachelist={sprachelist}/>
             <Sprache sprachelist={sprachelist}/>
             <Sprache sprachelist={sprachelist}/>
-            <Sprache sprachelist={sprachelist}/>
-            <Sprache sprachelist={sprachelist}/>
-            <Sprache sprachelist={sprachelist}/>
-            <Sprache sprachelist={sprachelist}/>
-            <Sprache sprachelist={sprachelist}/>
-            <Sprache sprachelist={sprachelist}/>
-            <Sprache sprachelist={sprachelist}/>
-            <div className='py-32' />
+
+            <div className='py-12 md:py-24' />
         </Container>
-        <Footers />
+        <Contact />
         </>
     )
 }

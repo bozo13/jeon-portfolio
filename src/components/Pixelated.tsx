@@ -1,5 +1,5 @@
 'use client'
-import styles from './Styles/pixelated.module.css';
+import styles from './Styles/pixelated.module.scss';
 import { useRef, useState, useEffect } from 'react';
 import NextImage from 'next/image';
 import { useInView } from 'react-intersection-observer';

@@ -1,0 +1,29 @@
+@import "../../app/styles/mixin";
+
+
+$delay-intro-bottom: 150ms;
+$delay-intro-top: 450ms;
+$intro-duration: 550ms;
+
+.hide-text {
+
+      overflow: hidden;
+  @include breakpoint(large) {
+    > * {
+     
+      transform: translate3d(0, 200%, 0);
+    }
+  }
+}
+
+.show-text {
+  @include breakpoint(large) {
+    > * {
+      transform: translate3d(0, 0%, 0);
+      transition: transform $intro-duration ease-in-out;
+      transition-delay: $delay-intro-top;
+    }
+  }
+}
+
+/* var(--ease-out-expo)*/

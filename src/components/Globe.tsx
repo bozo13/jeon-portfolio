@@ -6,7 +6,6 @@ export default function Globe() {
   return (
 
    <div className={styles.globeBall}  >
-    <div className={styles.overlay}></div>
         <div className={styles.globe}>
             <div className={styles.globeWrap}>
                 <div className={styles.circle}></div>

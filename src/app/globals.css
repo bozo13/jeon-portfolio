@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection{
+  background-color: #D3FD50;
+  color: #000;
+  text-shadow: none;
+
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -181,7 +188,21 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-
 h1,h2,h3,h4,h5,h6, p{
   font-family: var(--font-base);
 } 
+
+.st0{fill:none;stroke:#231815;stroke-width:0.2835;stroke-miterlimit:10;}
+
+html, body{
+  font-size: 16px;
+  -webkit-text-size-adjust : 100%;  /* 크롬, 사파리, 오페라 신버전 */
+  -ms-text-size-adjust : 100%;  /* IE */
+  -moz-text-size-adjust : 100%;  /* 파이어폭스 */
+  -o-text-size-adjust : 100%;  /* 오페라 구버전 */
+}
+@media (min-width: 2000px) and (max-width: 2399px){
+html {
+    font-size: 18px;
+}
+}

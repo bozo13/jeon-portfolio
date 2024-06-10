@@ -32,24 +32,38 @@ export function MaskList({ maskedlist }: MaskListProps) {
 
   return (
     <ul ref={ref} className={styles.lineMask}>
+
+    <motion.li className={styles.singletablerow} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
+              <div className={styles.singletablecol}>
+                <span className={styles.eyebrow}>Company name</span>
+    
+              </div>
+              <div className={styles.singletablecol}>
+                <span className={styles.eyebrow}>Position</span>
+              </div>
+              <div className={styles.singletablecol}>
+                <span className={styles.eyebrow}>Period Location</span>
+              </div>
+    </motion.li>
       {maskedlist.map((Children, index) => (
-        <div key={Children.name + index}>
-          <motion.li className={styles.singletablerow} custom={index} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
+    
+          <motion.li  key={Children.name + index} className={styles.singletablerow} custom={index} variants={animation} initial="initial" animate={inView ? "enter" : "exit"}>
             <div className={styles.singletablecol}>
-              <span className={styles.eyebrow}>Company name</span>
+ 
               <p className={styles.stacked}>{Children.name}</p>
             </div>
             <div className={styles.singletablecol}>
-              <span className={styles.eyebrow}>Position</span>
+        
               <p className={styles.stacked}>{Children.position}</p>
             </div>
             <div className={styles.singletablecol}>
-              <span className={styles.eyebrow}>Period Location</span>
+  
               <p className={styles.stacked}>{Children.period}</p>
             </div>
+            <motion.div className={styles.borderBottom} key={Children.name + index + index} custom={index} initial="initial" variants={lineAnim} animate={inView ? "enter" : "exit"} />
           </motion.li>
-          <motion.div className={styles.borderBottom} key={Children.name + index + index} custom={index} initial="initial" variants={lineAnim} animate={inView ? "enter" : "exit"} />
-        </div>
+          
+ 
       ))}
     </ul>
   );

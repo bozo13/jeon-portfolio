@@ -7,16 +7,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #141516;
+        background-color: var(--color-dark);
         position: relative;
         .body{
             padding-top: 200px;
             width: 100%;
             max-width: 1800px;
-            background-color: #141516;
+            background-color: var(--color-dark);
 
             .title{
-                border-bottom: 1px solid rgb(134, 134, 134);
+                border-bottom: 1px solid var(--color-light);
                 padding-bottom: 100px;
                 margin-left: 200px;
                 margin-right: 200px;
@@ -149,26 +149,34 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #141516;
+        background-color: var(--color-dark);
         position: relative;
         .body{
-            padding-top: 200px;
+            padding-top: 5vh;
             width: 100%;
             max-width: 1200px;
-            background-color: #141516;
+            background-color: var(--color-dark);
 
             .title{
-                border-bottom: 1px solid rgb(134, 134, 134);
-                padding-bottom: 50px;
+                border-bottom: 1px solid var(--color-light);
+                padding-bottom: 5vh;
                 margin-left: 30px;
                 margin-right: 30px;
                 position: relative;
                 span{
                     display: flex;
                     align-items: center;
+
+                    .gridContainer{
+                        width: 122px;
+                        height: 122px;
+                        position: relative;
+                        background: conic-gradient(from 90deg at 0.5px 0.5px,var(--counter_g))0 0/calc(var(--counter_s)/40) calc(var(--counter_s)/40);
+                        margin: 4px;
+                    }
                     .imageContainer{
-                        width: 100px;
-                        height: 100px;
+                        width: 130px;
+                        height: 130px;
                         position: relative;
                         border-radius: 50%;
                         overflow: hidden;
@@ -177,14 +185,13 @@
                             object-fit: cover;
                         }
                     }
-                    h2{
-                        margin-left: 2px;
-                    }
+        
                 }
                 h2{
                     font-size: 5vw;
                     margin-left: 102px;
                     font-weight: 300;
+                    line-height: 5vw;
                 }
                 .buttonContainer{
                     position: absolute;
@@ -287,52 +294,49 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #141516;
+        background-color: var(--color-dark);
         position: relative;
         .body{
-            padding-top: 500px;
+            padding-top:10vh ;
             width: 100%;
             max-width: 1200px;
-            background-color: #141516;
+            background-color: var(--color-dark);
 
             .title{
-                border-bottom: 1px solid rgb(134, 134, 134);
-                padding-bottom: 50px;
-                margin-left: 30px;
-                margin-right: 30px;
+                border-bottom: 1px solid var(--color-light);
+                padding-bottom: 10vh;
+                margin-left: 10px;
+                margin-right: 10px;
                 position: relative;
                 span{
                     display: flex;
-         
-                    align-items: center;
+                    align-items: start;
 
                     .gridContainer{
-                        width: 98spx;
-                        height: 98px;
+                        width: 104px;
+                        height: 104px;
                         position: relative;
                         background: conic-gradient(from 90deg at 0.5px 0.5px,var(--counter_g))0 0/calc(var(--counter_s)/40) calc(var(--counter_s)/40);
-                        margin-right: 5px;
+                        margin: 4px;
                     }
                     .imageContainer{
-                        width: 100px;
-                        height: 100px;
+                        width: 111px;
+                        height: 111px;
                         position: relative;
                         border-radius: 50%;
                         overflow: hidden;
-
                         img{
                             object-fit: cover;
                         }
                     }
                     h2{
-                        margin-left: 2px;
+                        font-size: 5vw;
+                        margin-left: 2vw;
+                    
                     }
+             
                 }
-                h2{
-                    font-size: 5vw;
-                    margin-left: 102px;
-                    font-weight: 300;
-                }
+               
                 .buttonContainer{
                     position: absolute;
                     left: calc(100% - 300px); 

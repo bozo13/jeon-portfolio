@@ -1,21 +1,25 @@
 @import "../../app/styles/mixin";
 
-@include breakpoint(small){
+
 .header{
     position: absolute;
     display: flex;
     z-index: 1;
     top: 0;
-    color: #000;
+    width: 100%;
     padding: 20px;
     justify-content: space-between;
-    width: 100%;
     font-weight: 300;
     box-sizing: border-box;
     align-items: center;
+    background: rgba(255,255,255,0);
+    color: var(--color-light);
+    mix-blend-mode: difference;
+
     
     .logo{
         display: flex;
+      
         cursor: pointer;
         p{
             margin: 0px;
@@ -155,7 +159,7 @@
     }
 }
 
-}
+
 
 @include breakpoint(large){
     .header{
@@ -165,8 +169,8 @@
         top: 0;
         color: #FFF;
         padding: 35px;
-        justify-content: space-between;
         width: 100%;
+        justify-content: space-between;
         font-weight: 300;
         box-sizing: border-box;
         align-items: center;

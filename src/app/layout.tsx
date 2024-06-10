@@ -83,10 +83,13 @@ export default function RootLayout({ children, seo = { title: '', description: '
           --font-text: ${myFont2.style.fontFamily};
         }
       `}</style>
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      </head>
     <CustomHead {...seo} />
       <body >  
         <LenisScroller />
-          <main data-scroll-container >
+          <main >
               <AnimatePresence 
                 mode='wait'
               >     

@@ -2,7 +2,7 @@
 
 import PageLanding from '@/components/PageLanding';
 import { usePathname } from "next/navigation";
-
+import Contact from '@/components/Contact';
 
 export default function Page(){
     const Pathname = usePathname()
@@ -19,8 +19,11 @@ export default function Page(){
 
 
       <PageLanding title={Pathname}  description={shortText}  link={Pathname} />
+      <div className='p-7 md:p-14 bg-white'>
 
-        <div>Contact</div>
+        <h1>Contact </h1>
+      </div>
+      <Contact/>
         </>
     )
 }

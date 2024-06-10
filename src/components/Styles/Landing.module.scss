@@ -1,3 +1,5 @@
+@import "/src/app/styles/mixin";
+
 .landing{
     position: relative;
     display: flex;
@@ -40,7 +42,7 @@
     .slider p{
       position: relative;
       margin: 0px;
-      color: #000;
+      color: var(--color-dark);
       font-size: 230px;
       font-weight: 500;
       padding-right: 50px;
@@ -56,9 +58,8 @@
       position: absolute;
       top: 35%;
       left: 65%;
-      color: #000;
+      color: var(--color-dark);
       font-size: 24px;
-      font-weight: 300;
       p{
         margin: 0px;
         margin-bottom: 10px;
@@ -70,3 +71,36 @@
     }
   }
   
+
+
+  @include breakpoint(medium){
+
+
+
+.landing{
+  .sliderContainer{
+
+    top: calc(100vh - 260px);
+  }
+  .slider p{
+    font-size: 84px;
+  }
+  
+
+  .description{
+    position: absolute;
+    top: 25%;
+    left: 53%;
+    color: #000;
+    p{
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+    svg{
+      transform: scale(2);
+      margin-bottom: 50px;
+    }
+  }
+}
+
+  }

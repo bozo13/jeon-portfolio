@@ -38,7 +38,7 @@ export default function Page(){
   return (
         <>
   
-        <div className={cn(styles['o-container'],"mt-52")}>
+        <div className={cn(styles['o-container'],"pt-52 bg-white")}>
           <div className={cn(styles['o-layout'],styles['-gutter-small'])}>
             <div className={cn(styles['o-layout_item'], styles['c-project_year'])} >
               <HeroTextIn introOut={introOut}>
@@ -68,7 +68,7 @@ export default function Page(){
             <div className={cn(styles['o-layout'],styles['-reverse'],)}>
             <div className={cn(styles['o-layout_item'],styles['c-project-summary_visual-wrapper'])} >
               <div className={cn(styles['c-project-summary_visual'])} > 
-                  <PixelatedImage src={`/images/pixelated/0.png`} src10={`/images/pixelated/0_small.png`}/>
+                  <PixelatedImage src={`/images/pixelated/6.png`} src10={`/images/pixelated/6_small.png`}/>
                   <h3>0_small</h3>
               </div>
               </div>
@@ -84,22 +84,20 @@ export default function Page(){
                   </HeroTextIn>
 
 
-            <div className='list-item list-decimal py-5'>
+            <div className={cn(styles['font-base'],'list-item list-decimal py-5')}>
          
-                  <li className=' py-1  uppercase' >
-                    <h3>
+                  <li className=' py-1 text-4xl  uppercase' >
+                   
                       design 
-                    </h3>
-                  </li>
-                  <li className=' py-1  uppercase' >
-                    <h3>
+                                    </li>
+                  <li className=' py-1 text-4xl  uppercase' >
+                   
                      branding 
-                     </h3>
-                  </li>
-                  <li className=' py-1  uppercase' >
-                      <h3>
+                                     </li>
+                  <li className=' py-1 text-4xl  uppercase' >
+                     
                         foto 
-                        </h3>
+                     
                   </li>
             </div>
                   </div>
@@ -119,31 +117,51 @@ export default function Page(){
 
             </div>
             </div>
-   
+            <div className='w-full h-auto flex flex-col justify-between' > 
+                  <PixelatedImage src={`/images/pixelated/home.png`} src10={`/images/pixelated/home_small.png`}/>
+           
+              </div>
 
-              <div className=''>
                 <div className='w-full h-auto flex flex-col justify-between'>
             <PixelatedImage src={`/images/pixelated/gravel.png`} src10={`/images/pixelated/gravel_small.png`}/>
-            </div>
             </div>
 
   
 
 
-          <div className='grid grid-cols-3 gap-4'>
-            <div className='col-span-2 row-span-1 w-full h-auto flex flex-col justify-between'> 
-              <PixelatedImage src={`/images/pixelated/works/brownyard/1.png`} src10={`/images/pixelated/works/brownyard/1_small.png`}/>
+          <div className= {cn(styles['Grid_Container'])} >
+            <div className='  '> 
+            <PixelatedImage src={`/images/pixelated/3.png`} src10={`/images/pixelated/3_small.png`}/>
               <h3>1_small</h3>
             </div>
-            <div className=' col-span-1 w-full h-auto flex flex-col justify-between'>  
+            <div className=' '>  
               <PixelatedImage src={`/images/pixelated/2.png`} src10={`/images/pixelated/2_small.png`}/>
               <h3>2_small</h3>
             </div>
-            <div className=' w-full flex flex-col h-auto justify-between'> 
-              <PixelatedImage src={`/images/pixelated/3.png`} src10={`/images/pixelated/3_small.png`}/>
+            <div className=' '> 
+           
+              <PixelatedImage src={`/images/pixelated/works/brownyard/1.png`} src10={`/images/pixelated/works/brownyard/1_small.png`}/>
               <h3>3_small</h3>
             </div>
-            <div className='col-span-2 w-full flex h-auto flex-col justify-between'> 
+            <div className=' '> 
+              <PixelatedImage src={`/images/pixelated/4.png`} src10={`/images/pixelated/4_small.png`}/>
+              <h3>4_small</h3>
+            </div>
+
+            <div className='  '> 
+            <PixelatedImage src={`/images/pixelated/3.png`} src10={`/images/pixelated/3_small.png`}/>
+              <h3>1_small</h3>
+            </div>
+            <div className=' '>  
+              <PixelatedImage src={`/images/pixelated/2.png`} src10={`/images/pixelated/2_small.png`}/>
+              <h3>2_small</h3>
+            </div>
+            <div className=' '> 
+           
+              <PixelatedImage src={`/images/pixelated/works/brownyard/1.png`} src10={`/images/pixelated/works/brownyard/1_small.png`}/>
+              <h3>3_small</h3>
+            </div>
+            <div className=' '> 
               <PixelatedImage src={`/images/pixelated/4.png`} src10={`/images/pixelated/4_small.png`}/>
               <h3>4_small</h3>
             </div>

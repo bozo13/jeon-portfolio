@@ -13,17 +13,17 @@
     box-sizing: border-box;
     align-items: center;
     background: rgba(255,255,255,0);
-    color: var(--color-light);
-    mix-blend-mode: difference;
+
 
     
     .logo{
         display: flex;
-      
         cursor: pointer;
         p{
             margin: 0px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            color: var(--color-light);
+            mix-blend-mode: difference;
         }
         .name{
             display: flex;
@@ -168,6 +168,7 @@
         z-index: 1;
         top: 0;
         color: #FFF;
+        background: rgba(255,255,255,0);
         padding: 35px;
         width: 100%;
         justify-content: space-between;
@@ -183,6 +184,7 @@
             p{
                 margin: 0px;
                 transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+             
             }
             .name{
                 display: flex;
@@ -225,6 +227,7 @@
         .nav{
             display: flex;
             align-items: center;
+        
     
             .el{
                 display: flex;
@@ -233,6 +236,7 @@
                 z-index: 1;
                 padding: 15px;
                 cursor: pointer;
+      
                 &:hover{
                     .indicator{
                         transform: scale(1);

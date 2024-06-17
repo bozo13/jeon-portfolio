@@ -1,0 +1,67 @@
+.cardContainer{
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+    flex-wrap: wrap;
+    .card{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: -25%;
+      height: 65vh;
+      width: 100vw;
+      transform-origin: top;
+      h2{
+        text-align: left;
+        margin: 0px;
+        font-size: xx-large;
+
+      }
+      .body{
+        display: flex;
+        height: 100%;
+        margin-top: 50px;
+        gap: 50px;
+  
+        .description{
+          width: 60%;
+          position: relative;
+          top: 10%;
+          padding: 10%;
+          p{
+            font-size: 16px;
+            &::first-letter{
+              font-size: 16px;
+            }
+          }
+          span{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            a{
+              font-size: 12px;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+  
+        .imageContainer{
+          position: relative;
+          width: 40%;
+          height: 100%;
+          overflow: hidden;
+          .inner{
+            width: 100%;
+            height: 100%;
+          }
+          img{
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
